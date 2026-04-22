@@ -22,13 +22,13 @@ P = eye(2);             % Initial Error Covariance
 x_true(:,1) = [0; 10];  % Starting at 0m, moving at 10m/s
 x_hat(:,1) = [0; 9];    % Initial guess (slightly off)
 
-% 4. Kalman Filter Loop
+% Kalman Filter Loop
 for k = 2:n
     % True State
     w = mvnrnd([0;0], Q)'; 
     x_true(:,k) = A * x_true(:,k-1) + w;
     
-    % Measurement (Noisy)
+    % Measurement (with noise)
     v = normrnd(0, sqrt(R));
     z(k) = C * x_true(:,k) + v;
 
