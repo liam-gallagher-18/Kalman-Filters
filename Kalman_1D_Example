@@ -49,6 +49,7 @@ plot(t, x_true(1,:), 'g', t, z, 'r.', t, x_hat(1,:), 'b--');
 title('Spacecraft Position Tracking');
 legend('True Position', 'Noisy Measurements', 'Kalman Estimate', 'Location', 'Northwest');
 ylabel('Position (m)');
+%xlim([9 10]) %% UNCOMMENT TO SEE ERROR MAGNITUDE MORE CLEARLY
 
 subplot(2,1,2);
 plot(t, x_true(2,:), 'g', t, x_hat(2,:), 'b--');
@@ -56,3 +57,4 @@ title('Spacecraft Velocity Estimation');
 legend('True Velocity', 'Kalman Estimate');
 ylabel('Velocity (m/s)');
 xlabel('Time (s)');
+%xlim([9 10]) %% UNCOMMENT TO SEE ERROR MAGNITUDE MORE CLEARLY
