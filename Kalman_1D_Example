@@ -25,7 +25,8 @@ x_hat(:,1) = [0; 9];    % Initial guess (slightly off)
 % Kalman Filter Loop
 for k = 2:n
     % True State
-    x_true(:,k) = A * x_true(:,k-1);
+    w = mvnrnd([0;0], Q)'; 
+    x_true(:,k) = A * x_true(:,k-1) + w;
     
     % Measurement (with noise)
     v = normrnd(0, sqrt(R));
