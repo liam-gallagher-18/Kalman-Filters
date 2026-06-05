@@ -19,7 +19,7 @@ x_hat = zeros(2, n);    % Estimated state
 P = eye(2);             % Initial Error Covariance
 
 % Initial conditions
-x_true(:,1) = [0; 10];  % Starting at 0m, moving at 10m/s
+x_true(:,1) = [0; 10];       % Starting at 0m, moving at 10m/s
 x_hat(:,1) = x_true(:,1);    % Initial guess based on theoretically correct state
 
 % Kalman Filter Loop
